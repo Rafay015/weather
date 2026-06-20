@@ -15,7 +15,6 @@ let defaultScreen = document.querySelector(".default");
 cityInput.addEventListener("keydown", (event) => {
   let cityName = cityInput.value.trim();
   if (event.key === "Enter" && cityName !== "") {
-    console.log(cityName);
     getWeather(cityName);
     cityInput.value = "";
     locationPlace.innerHTML = cityName;  
@@ -40,7 +39,6 @@ async function getWeather(city) {
   const response = await fetch(url);
   let data = await response.json();
 
-  console.log(data);
   if (data.cod == 404) {
     img.src = "not-found.png";
     error.innerHTML = "Not Found";
@@ -48,35 +46,35 @@ async function getWeather(city) {
     defaultScreen.style.display = "block"
   }else if (data.weather[0].id <= 232) {
     tempImg.src = "thunderstorm.svg";
-    temp.innerHTML = data.main.temp;
+    temp.innerHTML = Math.round(data.main.temp) + "&deg;C";
     weather.innerHTML = "Thunderstorm";
   }
   else if (data.weather[0].id <= 321) {
     tempImg.src = "drizzle.svg";
-    temp.innerHTML = data.main.temp;
+    temp.innerHTML = Math.round(data.main.temp) + "&deg;C";
     weather.innerHTML = "Drizzle"
   }else if (data.weather[0].id <= 531) {
     tempImg.src = "rain.svg";
-    temp.innerHTML = data.main.temp;
+    temp.innerHTML = Math.round(data.main.temp) + "&deg;C";
     weather.innerHTML = "Rain"
   }
   else if (data.weather[0].id <= 622) {
     tempImg.src = "snow.svg";
-    temp.innerHTML = data.main.temp;
+    temp.innerHTML = Math.round(data.main.temp) + "&deg;C";
     weather.innerHTML = "Snow"
   }
   else if (data.weather[0].id <= 781) {
     tempImg.src = "atmosphere.svg";
-    temp.innerHTML = data.main.temp;
+    temp.innerHTML = Math.round(data.main.temp) + "&deg;C";
     weather.innerHTML = "Haze"
   }
   else if (data.weather[0].id <= 800) {
     tempImg.src = "clear.svg";
-    temp.innerHTML = data.main.temp;
+    temp.innerHTML = Math.round(data.main.temp) + "&deg;C";
     weather.innerHTML = "Clear"
   }else{
     tempImg.src = "clouds.svg";
-    temp.innerHTML = data.main.temp;
+    temp.innerHTML = Math.round(data.main.temp) + "&deg;C";
     weather.innerHTML = "Clouds"
   }
   if (data.cod != 404) {
