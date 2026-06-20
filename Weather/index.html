@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Weather</title>
+  </head>
+  <body>
+    <div class="default">
+      <div class="container">
+        <img src="search-city.png" alt="" />
+        <h1>Search City</h1>
+        <h3>Find out the weather conditions of the city</h3>
+      </div>
+    </div>
+    <header class="navbar">
+      <input type="text" placeholder="Search City" class="city-input" />
+      <button class="search-btn"></button>
+    </header>
+    <main>
+      <div class="info">
+        <div class="location">
+          <img src="location.png" alt="" />
+          <p>lahore</p>
+        </div>
+        <div class="date">Thu, 08 Aug</div>
+      </div>
+      <div class="temp-info">
+        <img src="clouds.svg" alt="" />
+        <div class="temperature">
+          <span>22C</span>
+          <div>clouds</div>
+        </div>
+      </div>
+      <div class="air-info">
+        <div class="humidity">
+          <img src="water.png" alt="" />
+          <span>
+            <div>Humidity</div>
+            <div class="humidity-lvl">74%</div>
+          </span>
+        </div>
+        <div class="wind">
+          <img src="wind.png" alt="" />
+          <span>
+            <div>Wind Speed</div>
+            <div class="wind-speed">15M/s</div>
+          </span>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
