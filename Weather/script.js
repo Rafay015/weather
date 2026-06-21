@@ -78,8 +78,8 @@ async function getWeather(city) {
     weather.innerHTML = "Clouds"
   }
   if (data.cod != 404) {
-    humidityLvl.innerHTML = data.main.humidity;
-    windSpeed.innerHTML = data.wind.speed;
+    humidityLvl.innerHTML = data.main.humidity + "%";
+    windSpeed.innerHTML = data.wind.speed + "Km/h";
     defaultScreen.style.display = "none";
   }
 }
